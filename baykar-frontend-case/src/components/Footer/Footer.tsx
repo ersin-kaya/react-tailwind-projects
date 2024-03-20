@@ -122,7 +122,7 @@ const Footer = (props: Props) => {
                         </div>
                     ))}
                 </div>
-                <div className="flex w-full flex-col items-center justify-center border-t border-neutral-700 sm:py-0 xs:py-12 md:flex-row md:justify-between">
+                <div className="flex w-full flex-col items-center justify-center border-t border-neutral-700 xs:mb-10 xs:py-12 sm:py-0 md:flex-row md:justify-between">
                     <p className="mb-4 text-center font-normal text-blue-gray-900 md:mb-0">
                         Collers &copy; {currentYear}. All rights reserved.
                     </p>
