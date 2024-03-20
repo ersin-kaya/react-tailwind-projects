@@ -1,4 +1,5 @@
 import './App.css'
+import Content from './components/Content/Content'
 import Layout from './components/Layout/Layout'
 
 function App() {
@@ -6,7 +7,7 @@ function App() {
   return (
     <>
       <Layout>
-        Hello
+        <Content />
       </Layout>
     </>
   )
