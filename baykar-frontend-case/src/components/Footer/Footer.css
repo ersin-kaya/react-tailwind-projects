@@ -2,3 +2,15 @@
     background-color: #0f172a;
     color: white;
 }
+
+.footer-navigation {}
+
+.footer-navigation-item {}
+
+.footer-navigation-item:last-child {
+    padding-right: 0;
+}
+
+.footer-navigation-globe-icon {
+    width: 100px;
+}
