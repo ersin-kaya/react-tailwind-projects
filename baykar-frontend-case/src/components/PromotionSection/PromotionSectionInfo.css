@@ -1,0 +1,24 @@
+.buttons a {
+    margin-right: 8px;
+}
+
+.sign-up-button,
+.watch-demo-button {
+    color: #78360f;
+}
+
+.sign-up-button {
+    width: 179px;
+    height: 56px;
+    padding: 16px;
+    border: 2px solid #78360f;
+    border-radius: 8px;
+    font-size: 20px;
+}
+
+.watch-demo-button {
+    width: 152px;
+    height: 48px;
+    padding: 12px 8px;
+    font-size: 16px;
+}
