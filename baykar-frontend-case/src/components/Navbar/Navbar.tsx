@@ -20,7 +20,7 @@ function classNames(...classes: any) {
 
 const Navbar = (props: Props) => {
     return (
-        <Disclosure as="nav" className="bg-navbar sm:flex sm:justify-between sm:items-center sm:[height:96px]">
+        <Disclosure as="nav" className="bg-navbar xs:bg-white sm:flex sm:justify-between sm:items-center sm:[height:96px]">
             {({ open }) => (
                 <>
                     <div className="mx-auto max-w-7xl px-2 sm:w-full sm:px-6 lg:px-8">
