@@ -1,15 +1,23 @@
 .promotion-section {
-    height: 948px;
+    height: 948px !important;
+    gap: 80px;
     background-color: #fffbeb;
     background-image: url(../../assets/rectangle.png);
     background-repeat: no-repeat;
     background-size: cover;
-
+    /* background-position-x: 100px !important; */
 }
 
-@media (min-width: 425px) {
+@media (max-width: 1445px) {
+    .promotion-section {
+        background-position-x: 20px !important;
+    }
+}
+
+@media (max-width: 435px) {
     .promotion-section {
         height: 1577.2px;
         background-position: center;
+        background-position-x: -275px !important;
     }
 }
