@@ -9,7 +9,7 @@ type Props = {
 
 const Layout = ({ children }: Props) => {
     return (
-        <div className='layout'>
+        <div className='layout overflow-x-hidden'>
             <Navbar />
             <div className="body-container">
                 {children}
