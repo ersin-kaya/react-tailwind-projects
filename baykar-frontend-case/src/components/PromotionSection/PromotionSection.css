@@ -16,8 +16,8 @@
 
 @media (max-width: 435px) {
     .promotion-section {
-        height: 1577.2px;
+        height: 1577.2px !important;
         background-position: center;
-        background-position-x: -275px !important;
+        background-position-x: -1375px !important;
     }
 }
