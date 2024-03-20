@@ -47,7 +47,7 @@ const currentYear = new Date().getFullYear();
 
 const Footer = (props: Props) => {
     return (
-        <div className="footer relative w-full xs:text-center sm:text-start">
+        <div className="footer relative w-full text-sm xs:text-center sm:text-start">
             <div className="mx-auto w-full max-w-7xl px-8">
                 <div className="mx-auto grid w-full grid-cols-1 gap-8 py-12 md:grid-cols-2 lg:grid-cols-4">
                     {sitemap.map(({ title, links }, key) => (
@@ -122,7 +122,7 @@ const Footer = (props: Props) => {
                         </div>
                     ))}
                 </div>
-                <div className="flex w-full flex-col items-center justify-center border-t border-neutral-700 py-4 xs:py-12 md:flex-row md:justify-between">
+                <div className="flex w-full flex-col items-center justify-center border-t border-neutral-700 sm:py-0 xs:py-12 md:flex-row md:justify-between">
                     <p className="mb-4 text-center font-normal text-blue-gray-900 md:mb-0">
                         Collers &copy; {currentYear}. All rights reserved.
                     </p>

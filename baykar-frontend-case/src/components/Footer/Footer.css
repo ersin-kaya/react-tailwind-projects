@@ -7,7 +7,7 @@
 
 .footer-navigation-item {}
 
-.footer-navigation-item:last-child {
+.footer-navigation-item li:last-child {
     padding-right: 0;
 }
 
