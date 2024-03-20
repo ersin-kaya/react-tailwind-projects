@@ -20,10 +20,10 @@ function classNames(...classes: any) {
 
 const Navbar = (props: Props) => {
     return (
-        <Disclosure as="nav" className="bg-navbar">
+        <Disclosure as="nav" className="bg-navbar sm:flex sm:justify-between sm:items-center sm:[height:96px]">
             {({ open }) => (
                 <>
-                    <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+                    <div className="mx-auto max-w-7xl px-2 sm:w-full sm:px-6 lg:px-8">
                         <div className="relative flex h-16 items-center justify-end">
                             <div className="absolute inset-y-0 right-0 flex items-center sm:hidden">
                                 {/* Mobile menu button*/}
@@ -52,7 +52,7 @@ const Navbar = (props: Props) => {
                                                     key={item.name}
                                                     href={item.href}
                                                     className={classNames(
-                                                        item.border ? 'navbar-item-border' : undefined, 'color-navbar-text duration-500 hover:opacity-70 hover:bg-amber-500 hover:text-neutral-50 hover:text-orange-900',
+                                                        item.border ? 'navbar-item-border' : undefined, 'color-navbar-text duration-500 hover:scale-110 hover:opacity-70 hover:text-rose-700',
                                                         'rounded-md px-3 py-2 text-sm font-medium'
                                                     )}
                                                     aria-current={item.current ? 'page' : undefined}
