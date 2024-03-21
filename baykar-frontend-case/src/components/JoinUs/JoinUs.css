@@ -1,6 +1,14 @@
 .join-us {
-    height: 816px;
+    /* height: 816px; */
     background-color: #fffcf3;
+}
+
+.join-us-content {
+    margin: 120px auto;
+    width: 1280px;
+    height: 496px;
+    border-radius: 30px;
+    box-shadow: rgba(47, 47, 49, 0.06) 0px 20px 10px -2px, rgba(0, 0, 0, 0.3) 0px 3px 20px -3px;
 }
 
 .join-us-button {
@@ -10,4 +18,16 @@
     color: #78350F;
     width: 179px;
     height: 56px;
+}
+
+@media (max-width:435px) {
+    .join-us-content {
+        margin: 20px;
+        width: 92%;
+        height: auto;
+    }
+
+    .join-us-content .join-us-right-section img:first-child {
+        width: 150%;
+    }
 }
