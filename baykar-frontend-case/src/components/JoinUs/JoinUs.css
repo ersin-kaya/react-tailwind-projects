@@ -1,0 +1,13 @@
+.join-us {
+    height: 816px;
+    background-color: #fffcf3;
+}
+
+.join-us-button {
+    border: 2px solid #78350F;
+    padding: 12px 24px;
+    border-radius: 8px;
+    color: #78350F;
+    width: 179px;
+    height: 56px;
+}
