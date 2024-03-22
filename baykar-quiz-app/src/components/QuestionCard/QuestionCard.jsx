@@ -1,13 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import './QuestionCard.css'
 
-const QuestionCard = ({ quizData, score, setScore, currentQuestionNumber, setCurrentQuestionNumber, showResult, setShowResult }) => {
+const QuestionCard = ({ quizData, score, setScore, currentQuestionNumber, setCurrentQuestionNumber, userAnswers, setUserAnswers, showResult, setShowResult }) => {
     const answerChoices = ['A)', 'B)', 'C)', 'D)']
     const scoreForEachCorrectAnswer = 10
     const durationForEachQuestion = 30
     const questionCountForQuiz = quizData.length
-    const userAnswers = []
-
 
     const [timer, setTimer] = useState(durationForEachQuestion)
 
@@ -16,7 +14,8 @@ const QuestionCard = ({ quizData, score, setScore, currentQuestionNumber, setCur
         const selectedAnswer = e.currentTarget.value
         const checkAnswer = selectedAnswer === correctAnswer.text
 
-        userAnswers.push({ question: quizData[currentQuestionNumber]?.question, correctAnswer: correctAnswer, selectedAnswer: selectedAnswer, result: checkAnswer })
+        const userAnswer = { question: quizData[currentQuestionNumber]?.question, correctAnswer: correctAnswer, selectedAnswer: selectedAnswer, result: checkAnswer }
+        setUserAnswers([...userAnswers, userAnswer])
 
         if (checkAnswer) {
             setScore(score + scoreForEachCorrectAnswer)

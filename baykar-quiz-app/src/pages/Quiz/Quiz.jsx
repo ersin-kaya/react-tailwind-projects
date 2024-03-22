@@ -6,6 +6,7 @@ import Result from '../../components/Result/Result'
 
 const Quiz = () => {
     const [quizData, setQuizData] = useState([])
+    const [userAnswers, setUserAnswers] = useState([])
     const [score, setScore] = useState(0)
     const [currentQuestionNumber, setCurrentQuestionNumber] = useState(0)
     const [showResult, setShowResult] = useState(false)
@@ -90,7 +91,7 @@ const Quiz = () => {
             {
                 showResult
                     ?
-                    <Result />
+                    <Result userAnswers={userAnswers} score={score} />
                     :
                     <QuestionCard
                         quizData={quizData}
@@ -98,6 +99,8 @@ const Quiz = () => {
                         setScore={setScore}
                         currentQuestionNumber={currentQuestionNumber}
                         setCurrentQuestionNumber={setCurrentQuestionNumber}
+                        userAnswers={userAnswers}
+                        setUserAnswers={setUserAnswers}
                         showResult={showResult}
                         setShowResult={setShowResult}
                     />

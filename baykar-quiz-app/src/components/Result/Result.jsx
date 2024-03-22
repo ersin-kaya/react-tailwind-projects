@@ -1,9 +1,10 @@
 import React from 'react'
 import './Result.css'
 
-const Result = () => {
+const Result = ({ userAnswers, score }) => {
+    console.log(userAnswers);
     return (
-        <div>Result</div>
+        <div>Puanınız: {score}</div>
     )
 }
 
