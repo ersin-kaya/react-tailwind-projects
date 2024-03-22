@@ -1,0 +1,80 @@
+.introduce {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+}
+
+.introduce-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 1280px;
+    max-width: 70%;
+    background-color: whitesmoke;
+    color: #142143;
+    border-radius: 2px;
+    padding: 30px;
+    box-shadow: 0 0 5px 1px crimson;
+}
+
+.quiz-image {
+    margin-top: 50px;
+}
+
+.introduce-title {
+    margin: 80px auto 30px auto;
+}
+
+.introduce-quiz-rules {
+    list-style-image: url('../../assets/arrow.png');
+    margin-left: 30px;
+    font-weight: 600;
+}
+
+.quiz-rule {
+    margin-bottom: 16px;
+    letter-spacing: 0px;
+}
+
+.start-btn {
+    width: 250px;
+    padding: 13px 24px;
+    margin: 36px 8px;
+    background-color: #142143;
+    color: whitesmoke;
+    letter-spacing: 0px;
+    font-size: 15px;
+    border: none;
+    border-radius: 8px;
+    transition: .5s;
+    cursor: pointer;
+}
+
+.start-btn:hover {
+    transform: scale(1.05);
+}
+
+@media (max-width: 1399.98px) {
+    .introduce-container {
+        width: 80%;
+        max-width: 90%;
+    }
+}
+
+
+@media (max-width: 1199.98px) {}
+
+
+@media (max-width: 991.98px) {}
+
+
+@media (max-width: 767.98px) {}
+
+
+@media (max-width: 575.98px) {
+    .introduce-container {
+        width: 100%;
+    }
+}
