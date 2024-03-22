@@ -5,28 +5,38 @@ const QuestionCard = ({ quizData, score, setScore, currentQuestionNumber, setCur
     const answerChoices = ['A)', 'B)', 'C)', 'D)']
     const scoreForEachCorrectAnswer = 10
     const durationForEachQuestion = 30
+    const waitingPeriod = 10
     const questionCountForQuiz = quizData.length
+
+    const warning = document.getElementById('warning')
 
     const [timer, setTimer] = useState(durationForEachQuestion)
 
     const approvedChoice = (e) => {
-        const correctAnswer = (quizData[currentQuestionNumber]?.answers?.filter(answer => answer.correct))[0]
-        const selectedAnswer = e.currentTarget.value
-        const checkAnswer = selectedAnswer === correctAnswer.text
 
-        const userAnswer = { question: quizData[currentQuestionNumber]?.question, correctAnswer: correctAnswer, selectedAnswer: selectedAnswer, result: checkAnswer }
-        setUserAnswers([...userAnswers, userAnswer])
+        if (timer <= durationForEachQuestion - waitingPeriod) {
+            warning.classList.add('hide')
 
-        if (checkAnswer) {
-            setScore(score + scoreForEachCorrectAnswer)
+            const correctAnswer = (quizData[currentQuestionNumber]?.answers?.filter(answer => answer.correct))[0]
+            const selectedAnswer = e.currentTarget.value
+            const checkAnswer = selectedAnswer === correctAnswer.text
+
+            const userAnswer = { question: quizData[currentQuestionNumber]?.question, correctAnswer: correctAnswer, selectedAnswer: selectedAnswer, result: checkAnswer }
+            setUserAnswers([...userAnswers, userAnswer])
+
+            if (checkAnswer) {
+                setScore(score + scoreForEachCorrectAnswer)
+            } else {
+            }
+
+            setCurrentQuestionNumber(currentQuestionNumber + 1)
+            if (currentQuestionNumber + 1 === questionCountForQuiz) {
+                setShowResult(true)
+            }
+            setTimer(durationForEachQuestion)
         } else {
+            warning.classList.remove('hide')
         }
-
-        setCurrentQuestionNumber(currentQuestionNumber + 1)
-        if (currentQuestionNumber + 1 === questionCountForQuiz) {
-            setShowResult(true)
-        }
-        setTimer(durationForEachQuestion)
     }
 
     useEffect(() => {
@@ -35,6 +45,7 @@ const QuestionCard = ({ quizData, score, setScore, currentQuestionNumber, setCur
                 setTimer(timer - 1)
             }
             else if (timer === 0 && currentQuestionNumber < questionCountForQuiz) {
+                warning.classList.add('hide')
                 setCurrentQuestionNumber(currentQuestionNumber + 1)
                 setTimer(durationForEachQuestion)
             }
@@ -54,6 +65,7 @@ const QuestionCard = ({ quizData, score, setScore, currentQuestionNumber, setCur
         <div className='question-card'>
             <div className='question-container'>
                 <div className="timer">
+                    <div className="warning hide" id='warning'>Soruları ilk {waitingPeriod} saniye boyunca cevaplayamazsınız!</div>
                     <div className="countdown">{timer}</div>
                 </div>
                 <div className="question">

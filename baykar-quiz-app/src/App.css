@@ -17,3 +17,7 @@ body {
     background-color: #142143;
     color: white;
 }
+
+.hide {
+    visibility: hidden;
+}
