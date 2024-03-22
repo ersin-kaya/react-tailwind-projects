@@ -1,9 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import './Quiz.css'
 import * as api from '../../api/quizAPI'
+import QuestionCard from '../../components/QuestionCard/QuestionCard'
 
 const Quiz = () => {
-    const [questions, setQuestions] = useState([])
+    const [quizData, setQuizData] = useState([])
+    const [score, setScore] = useState(0)
+    const [currentQuestionNumber, setCurrentQuestionNumber] = useState(0)
+    const [loadResultPage, setLoadResultPage] = useState(false)
 
     function getRandomNumber(min, max) {
         return Math.floor(Math.random() * (max - min + 1)) + min
@@ -69,19 +73,25 @@ const Quiz = () => {
     useEffect(() => {
         const getData = async () => {
             const data = await api.fetchQuizData()
-            // console.log(data)
-
-            setQuestions(createQuiz(10, data))
-
-            // setQuestions(currentQuestions => [...questions, ...['data']])
+            setQuizData(createQuiz(10, data))
         }
         getData()
     }, [])
 
-    console.log(questions);
+    // console.log(quizData);
 
     return (
-        <div className='quiz'>Quiz</div>
+        <div className='quiz'>
+            <QuestionCard
+                quizData={quizData}
+                score={score}
+                setScore={setScore}
+                currentQuestionNumber={currentQuestionNumber}
+                setCurrentQuestionNumber={setCurrentQuestionNumber}
+                loadResultPage={loadResultPage}
+                setLoadResultPage={setLoadResultPage}
+            />
+        </div>
     )
 }
 
