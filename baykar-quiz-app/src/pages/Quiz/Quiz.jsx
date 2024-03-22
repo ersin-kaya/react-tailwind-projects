@@ -7,7 +7,7 @@ const Quiz = () => {
     const [quizData, setQuizData] = useState([])
     const [score, setScore] = useState(0)
     const [currentQuestionNumber, setCurrentQuestionNumber] = useState(0)
-    const [loadResultPage, setLoadResultPage] = useState(false)
+    const [showResult, setShowResult] = useState(false)
 
     function getRandomNumber(min, max) {
         return Math.floor(Math.random() * (max - min + 1)) + min
@@ -92,8 +92,8 @@ const Quiz = () => {
                 setScore={setScore}
                 currentQuestionNumber={currentQuestionNumber}
                 setCurrentQuestionNumber={setCurrentQuestionNumber}
-                loadResultPage={loadResultPage}
-                setLoadResultPage={setLoadResultPage}
+                showResult={showResult}
+                setShowResult={setShowResult}
             />
         </div>
     )

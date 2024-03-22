@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import './QuestionCard.css'
 
-const QuestionCard = ({ quizData, score, setScore, currentQuestionNumber, setCurrentQuestionNumber, loadResultPage, setLoadResultPage }) => {
+const QuestionCard = ({ quizData, score, setScore, currentQuestionNumber, setCurrentQuestionNumber, showResult, setShowResult }) => {
     const answerChoices = ['A)', 'B)', 'C)', 'D)']
     const scoreForEachCorrectAnswer = 10
     const durationForEachQuestion = 30
@@ -25,7 +25,7 @@ const QuestionCard = ({ quizData, score, setScore, currentQuestionNumber, setCur
 
         setCurrentQuestionNumber(currentQuestionNumber + 1)
         if (currentQuestionNumber + 1 === questionCountForQuiz) {
-            setLoadResultPage(true)
+            setShowResult(true)
         }
         setTimer(durationForEachQuestion)
     }
@@ -40,7 +40,7 @@ const QuestionCard = ({ quizData, score, setScore, currentQuestionNumber, setCur
                 setTimer(durationForEachQuestion)
             }
             else if (currentQuestionNumber >= questionCountForQuiz) {
-                setLoadResultPage(true)
+                setShowResult(true)
             }
         }, 1000)
 
