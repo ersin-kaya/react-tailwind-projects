@@ -49,6 +49,10 @@ const Quiz = () => {
             answers.push(answer)
         }
 
+        if (answers.filter(a => a.correct).length === 0) {
+            answers[0].correct = true
+        }
+
         return shuffleArray(answers)
     }
 
