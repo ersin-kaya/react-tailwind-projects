@@ -14,12 +14,12 @@ const Questions = ({ quizData, score, setScore, currentQuestionNumber, setCurren
                 </div>
                 <div className="answers">
                     {
-                        quizData[currentQuestionNumber]?.answers.map((answer, index) => {
+                        quizData[currentQuestionNumber]?.answers?.map((answer, index) => {
                             return (
-                                <div className="answer" key={index}>
+                                <button className="answer" key={index}>
                                     <div className='answer-choice'>{answerChoices[index]}</div>
                                     {answer.text}
-                                </div>
+                                </button>
                             )
                         })
                     }
