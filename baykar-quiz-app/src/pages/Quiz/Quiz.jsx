@@ -9,6 +9,14 @@ const Quiz = () => {
         return Math.floor(Math.random() * (max - min + 1)) + min
     }
 
+    function shuffleArray(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]];
+        }
+        return array;
+    }
+
     function capitalizeFirstLetter(string) {
         return string.charAt(0).toUpperCase() + string.slice(1);
     }
@@ -37,7 +45,7 @@ const Quiz = () => {
             answers.push(answer)
         }
 
-        return answers
+        return shuffleArray(answers)
     }
 
     function createQuestion(object) {
@@ -55,7 +63,7 @@ const Quiz = () => {
             questions.push(createQuestion(data[index]))
         }
 
-        return questions
+        return shuffleArray(questions)
     }
 
     useEffect(() => {
