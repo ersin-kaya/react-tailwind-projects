@@ -2,15 +2,20 @@ import React from 'react'
 import './QuestionCard.css'
 
 const QuestionCard = ({ quizData, score, setScore, currentQuestionNumber, setCurrentQuestionNumber, loadResultPage, setLoadResultPage }) => {
-    const answerChoices = ['A)', 'B)', 'C)', 'D)'];
+
+    const answerChoices = ['A)', 'B)', 'C)', 'D)']
+    const userAnswers = []
 
     const approvedChoice = (e) => {
         const correctAnswer = (quizData[currentQuestionNumber]?.answers?.filter(answer => answer.correct))[0]
         const selectedAnswer = e.currentTarget.value
+        const checkAnswer = selectedAnswer === correctAnswer.text
 
-        if (selectedAnswer === correctAnswer.text) {
+        if (checkAnswer) {
         } else {
         }
+
+        userAnswers.push({ question: quizData[currentQuestionNumber]?.question, correctAnswer: correctAnswer, selectedAnswer: selectedAnswer, result: checkAnswer })
     }
 
     return (
