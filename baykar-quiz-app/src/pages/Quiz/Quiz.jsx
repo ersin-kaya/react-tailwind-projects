@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import './Quiz.css'
 import * as api from '../../api/quizAPI'
 import QuestionCard from '../../components/QuestionCard/QuestionCard'
+import Result from '../../components/Result/Result'
 
 const Quiz = () => {
     const [quizData, setQuizData] = useState([])
@@ -86,15 +87,21 @@ const Quiz = () => {
 
     return (
         <div className='quiz'>
-            <QuestionCard
-                quizData={quizData}
-                score={score}
-                setScore={setScore}
-                currentQuestionNumber={currentQuestionNumber}
-                setCurrentQuestionNumber={setCurrentQuestionNumber}
-                showResult={showResult}
-                setShowResult={setShowResult}
-            />
+            {
+                showResult
+                    ?
+                    <Result />
+                    :
+                    <QuestionCard
+                        quizData={quizData}
+                        score={score}
+                        setScore={setScore}
+                        currentQuestionNumber={currentQuestionNumber}
+                        setCurrentQuestionNumber={setCurrentQuestionNumber}
+                        showResult={showResult}
+                        setShowResult={setShowResult}
+                    />
+            }
         </div>
     )
 }
