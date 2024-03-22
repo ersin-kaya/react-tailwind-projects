@@ -1,8 +1,15 @@
 import React from 'react'
 import './Introduce.css'
 import quizImage from '../../assets/quiz.png'
+import { useNavigate } from 'react-router-dom'
 
 const Introduce = () => {
+    const navigate = useNavigate()
+
+    const startQuiz = () => {
+        navigate('/quiz');
+    }
+
     return (
         <div className='introduce'>
             <div className="introduce-container">
@@ -15,7 +22,7 @@ const Introduce = () => {
                         <li className="quiz-rule">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque nam eum similique.</li>
                         <li className="quiz-rule">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</li>
                     </ul>
-                    <button className="start-btn">Sınava git</button>
+                    <button onClick={startQuiz} className="start-btn">Sınava git</button>
                 </div>
             </div>
         </div>
