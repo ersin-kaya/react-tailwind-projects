@@ -3,8 +3,6 @@ import { GlobeAltIcon } from '@heroicons/react/24/outline';
 import appStore from '../../assets/app-store.png';
 import googlePlay from '../../assets/google-play.png';
 
-type Props = {}
-
 const sitemap = [
     {
         title: "Product",
@@ -45,7 +43,7 @@ const footerNavigation = [
 
 const currentYear = new Date().getFullYear();
 
-const Footer = (props: Props) => {
+const Footer = () => {
     return (
         <div className="footer relative w-full text-sm xs:text-center sm:text-start">
             <div className="mx-auto w-full max-w-7xl px-8">

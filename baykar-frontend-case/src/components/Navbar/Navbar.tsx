@@ -3,8 +3,6 @@ import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { Bars3BottomRightIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import './Navbar.css';
 
-type Props = {}
-
 const navigation = [
     { name: 'Products', href: '#', current: true, border: false },
     { name: 'Solutions', href: '#', current: false, border: false },
@@ -18,7 +16,7 @@ function classNames(...classes: any) {
     return classes.filter(Boolean).join(' ')
 }
 
-const Navbar = (props: Props) => {
+const Navbar = () => {
     return (
         <Disclosure as="nav" className="bg-navbar xs:bg-white sm:flex sm:justify-between sm:items-center sm:[height:96px]">
             {({ open }) => (

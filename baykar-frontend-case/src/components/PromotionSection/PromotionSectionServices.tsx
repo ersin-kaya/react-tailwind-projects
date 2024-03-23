@@ -6,9 +6,7 @@ import secondServiceItemShape from '../../assets/second-service-item-shape.png'
 import thirdServiceItemIcon from '../../assets/third-service-item-icon.png'
 import thirdServiceItemShape from '../../assets/third-service-item-shape.png'
 
-type Props = {}
-
-const PromotionSectionServices = (props: Props) => {
+const PromotionSectionServices = () => {
     return (
         <div className='promotion-section-services flex justify-center items-end xs:text-center xs:flex-col xs:items-center xs:mt-64 [color:#0F172A]'>
             <div className="promotion-section-service-item">

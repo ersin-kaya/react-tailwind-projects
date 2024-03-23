@@ -7,9 +7,7 @@ import joinUsBlueShape from '../../assets/join-us-blue-shape.png'
 import joinUsPurpleShape from '../../assets/join-us-purple-shape.png'
 import joinUsVioletRedShape from '../../assets/join-us-violet-red-shape.png'
 
-type Props = {}
-
-const JoinUs = (props: Props) => {
+const JoinUs = () => {
     return (
         <div className='join-us flex justify-center items-center [color:#0f172a]'>
             <div className="join-us-content bg-white p-16 flex justify-between items-center [max-width:1220px] mx-auto xs:flex-col xs:mb-20">

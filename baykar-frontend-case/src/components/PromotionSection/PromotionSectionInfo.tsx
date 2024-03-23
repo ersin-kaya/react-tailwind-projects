@@ -1,9 +1,7 @@
 import { PlayCircleIcon } from '@heroicons/react/24/outline'
 import './PromotionSectionInfo.css'
 
-type Props = {}
-
-const PromotionSectionInfo = (props: Props) => {
+const PromotionSectionInfo = () => {
     return (
         <div className='promotion-section-info xs:flex xs:flex-col xs:text-center'>
             <div className="md:text-7xl font-semibold xs:[font-size:56px] xs:leading-tight">Collectible Sneakers</div>

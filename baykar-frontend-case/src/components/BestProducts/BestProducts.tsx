@@ -8,9 +8,7 @@ import secondCardSecondShape from '../../assets/second-card-second-shape.png'
 import thirdCardFirstShape from '../../assets/third-card-first-shape.png'
 import thirdCardSecondShape from '../../assets/third-card-second-shape.png'
 
-type Props = {}
-
-const BestProducts = (props: Props) => {
+const BestProducts = () => {
     return (
         <div className='best-products pt-16 xs:pt-10 xs:[height:1739px]'>
             <div className="best-products-header flex justify-between items-center [max-width:1220px] mx-auto xs:flex-col">
