@@ -128,8 +128,8 @@ const Footer = () => {
                         <ul className='footer-navigation flex'>
                             {
                                 footerNavigation.map(({ title, globeIcon }, key) => (
-                                    <a href="#" className="footer-navigation-item flex font-light transition-opacity hover:opacity-80">
-                                        <li className='flex items-center p-5' key={key}>
+                                    <a href="#" className="footer-navigation-item flex font-light transition-opacity hover:opacity-80" key={key}>
+                                        <li className='flex items-center p-5'>
                                             {
                                                 globeIcon
                                                     ? (<GlobeAltIcon className="footer-navigation-globe-icon block h-8 w-8 pe-2" aria-hidden="true" />)

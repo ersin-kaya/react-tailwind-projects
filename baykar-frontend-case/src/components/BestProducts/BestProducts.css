@@ -35,3 +35,13 @@
     padding: 10px 32px;
     border-radius: 8px;
 }
+
+@media (max-width: 575.98px) {
+    .product-card {
+        width: 90%;
+    }
+
+    .card-button {
+        width: 100%;
+    }
+}

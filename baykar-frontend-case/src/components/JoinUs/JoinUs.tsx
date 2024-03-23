@@ -30,10 +30,10 @@ const JoinUs = () => {
                     <img className='mt-10 [width:520px] [z-index:1]' src={joinUsImage} />
                     <img className='absolute [left:15px] [top:73px] xs:[width:70px] xs:rounded-full xs:[left:5px] xs:[top:70px]' src={joinUsBrownShape} />
                     <img className='absolute scale-110 [left:-10px] [top:-50px] xs:[left:-47px] xs:[top:-18px]' src={joinUsYellowShape} />
-                    <img className='absolute [z-index:2] [left:100px] [top:308px] xs:[width:60px] xs:[left:75px] xs:[top:260px]' src={joinUsGreenShape} />
+                    <img className='absolute [z-index:2] [left:100px] [top:308px] xs:[width:60px] xs:[left:75px] xs:[top:233px]' src={joinUsGreenShape} />
                     <img className='absolute [left:410px] [top:-55px] xs:[width:46px] xs:[left:308px] xs:[top:-10px]' src={joinUsBlueShape} />
-                    <img className='absolute [left:360px] [top:330px] xs:[width:55px] xs:rounded-full xs:[left:300px] xs:[top:265px]' src={joinUsPurpleShape} />
-                    <img className='absolute [left:395px] [top:265px] xs:[width:180px] xs:[left:325px] xs:[top:220px] xs:[border-radius:70px]' src={joinUsVioletRedShape} />
+                    <img className='absolute [left:360px] [top:330px] xs:[width:55px] xs:rounded-full xs:[left:280px] xs:[top:240px]' src={joinUsPurpleShape} />
+                    <img className='absolute [left:395px] [top:265px] xs:[width:180px] xs:[left:307px] xs:[top:190px] xs:[border-radius:70px]' src={joinUsVioletRedShape} />
                 </div>
             </div>
         </div>

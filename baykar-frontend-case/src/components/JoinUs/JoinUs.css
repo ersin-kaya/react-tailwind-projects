@@ -23,11 +23,15 @@
 @media (max-width:435px) {
     .join-us-content {
         margin: 20px;
-        width: 92%;
+        width: 90%;
         height: auto;
     }
 
+    .detail {
+        width: 90%;
+    }
+
     .join-us-content .join-us-right-section img:first-child {
-        width: 150%;
+        width: 90%;
     }
 }
