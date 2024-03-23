@@ -15,6 +15,7 @@ body {
     align-items: center;
     background-color: #142143;
     color: white;
+    overflow-x: hidden;
 }
 
 .hide {
