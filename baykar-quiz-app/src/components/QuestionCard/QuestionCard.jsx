@@ -12,16 +12,23 @@ const QuestionCard = ({ quizData, score, setScore, currentQuestionNumber, setCur
 
     const [timer, setTimer] = useState(durationForEachQuestion)
 
+    const question = quizData[currentQuestionNumber]?.question
+    let correctAnswer
+    try {
+        correctAnswer = (quizData[currentQuestionNumber]?.answers?.filter(answer => answer.correct))[0]
+    } catch (error) {
+
+    }
+
     const approvedChoice = (e) => {
 
         if (timer <= durationForEachQuestion - waitingPeriod) {
             warning.classList.add('hide')
 
-            const correctAnswer = (quizData[currentQuestionNumber]?.answers?.filter(answer => answer.correct))[0]
             const selectedAnswer = e.currentTarget.value
             const checkAnswer = selectedAnswer === correctAnswer.text
 
-            const userAnswer = { question: quizData[currentQuestionNumber]?.question, correctAnswer: correctAnswer, selectedAnswer: selectedAnswer, result: checkAnswer }
+            const userAnswer = { question: question, correctAnswer: correctAnswer, selectedAnswer: selectedAnswer, result: checkAnswer }
             setUserAnswers([...userAnswers, userAnswer])
 
             if (checkAnswer) {
@@ -48,6 +55,9 @@ const QuestionCard = ({ quizData, score, setScore, currentQuestionNumber, setCur
                 warning.classList.add('hide')
                 setCurrentQuestionNumber(currentQuestionNumber + 1)
                 setTimer(durationForEachQuestion)
+
+                const userAnswer = { question: question, correctAnswer: correctAnswer, selectedAnswer: undefined, result: undefined }
+                setUserAnswers([...userAnswers, userAnswer])
 
                 if (currentQuestionNumber + 1 >= questionCountForQuiz) {
                     setShowResult(true)
