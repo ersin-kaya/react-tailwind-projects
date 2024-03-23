@@ -48,9 +48,10 @@ const QuestionCard = ({ quizData, score, setScore, currentQuestionNumber, setCur
                 warning.classList.add('hide')
                 setCurrentQuestionNumber(currentQuestionNumber + 1)
                 setTimer(durationForEachQuestion)
-            }
-            else if (currentQuestionNumber >= questionCountForQuiz) {
-                setShowResult(true)
+
+                if (currentQuestionNumber + 1 >= questionCountForQuiz) {
+                    setShowResult(true)
+                }
             }
         }, 1000)
 
