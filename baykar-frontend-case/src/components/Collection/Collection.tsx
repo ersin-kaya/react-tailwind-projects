@@ -2,9 +2,7 @@ import './Collection.css'
 import collectionLeftSideImage from '../../assets/collection-left-side.png'
 import collectionRightSideImage from '../../assets/collection-right-side.png'
 
-type Props = {}
-
-const Collection = (props: Props) => {
+const Collection = () => {
     return (
         <div className='collection'>
             <div className="collection-title"><h1>Grow your collection</h1></div>
