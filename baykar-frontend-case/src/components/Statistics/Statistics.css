@@ -1,0 +1,43 @@
+.statistics {
+    height: 717px;
+    background-color: #78350f;
+    color: #fffbeb;
+    background-image: url('../../assets/world.png');
+    background-repeat: no-repeat;
+    background-position: center;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.statistics-number {
+    font-size: 96px;
+    font-weight: 800;
+    line-height: 105.6px;
+}
+
+.statistics-description {
+    font-size: 56px;
+    font-weight: 800;
+    line-height: 81.6px;
+    text-align: center;
+}
+
+@media (max-width: 575.98px) {
+    .statistics {
+        height: 717px;
+        background-position: left;
+    }
+
+    .statistics-number {
+        font-size: 48px;
+        line-height: 52.8px;
+    }
+
+    .statistics-description {
+        font-size: 32px;
+        font-weight: 700;
+        line-height: 55.2px;
+    }
+}
