@@ -21,7 +21,7 @@
     width: 100%;
     background-color: rgb(249, 137, 97);
     color: #141c3a;
-    margin-bottom: 20px;
+    margin: 20px 0;
     padding: 10px;
     border-radius: 2px;
 }
@@ -88,5 +88,31 @@
     font-weight: 900;
     border-radius: 5px;
     padding: 5px 10px;
-    margin-top: 50px;
+    margin: 50px 0;
+}
+
+@media (max-width: 1399.98px) {}
+
+@media (max-width: 1199.98px) {
+    .question-container {
+        width: 880px;
+    }
+}
+
+@media (max-width: 991.98px) {
+    .question-container {
+        width: 700px;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .question-container {
+        width: 500px;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .question-container {
+        width: 300px;
+    }
 }
