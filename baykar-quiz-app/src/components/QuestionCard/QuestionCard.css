@@ -7,6 +7,7 @@
 
 .question-container {
     width: 960px;
+    margin-top: 50px;
 }
 
 .timer {
@@ -112,5 +113,6 @@
 @media (max-width: 575.98px) {
     .question-container {
         width: 300px;
+        margin-top: 80px;
     }
 }
