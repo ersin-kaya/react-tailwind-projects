@@ -6,9 +6,9 @@ import 'react-toastify/dist/ReactToastify.css';
 const QuestionCard = ({ quizData, score, setScore, currentQuestionNumber, setCurrentQuestionNumber, userAnswers, setUserAnswers, showResult, setShowResult }) => {
     const answerChoices = ['A)', 'B)', 'C)', 'D)']
     const scoreForEachCorrectAnswer = 10
-    const durationForEachQuestion = 10
+    const durationForEachQuestion = 30
     const questionCountForQuiz = quizData.length
-    const waitingPeriod = 0
+    const waitingPeriod = 10
     const warningMessageForWaitingPeriod = `Soruları ilk ${waitingPeriod} saniye boyunca cevaplayamazsınız!`
 
     const [timer, setTimer] = useState(durationForEachQuestion)
@@ -24,40 +24,56 @@ const QuestionCard = ({ quizData, score, setScore, currentQuestionNumber, setCur
 
     }
 
+    document.addEventListener('click', function (e) {
+        if (e.target.nodeName != 'BUTTON') {
+            handleButtonFocusForNextQuestion()
+        }
+    })
+
     const handleSelect = (e) => {
         setSelectedAnswer(e.currentTarget.value)
         setSelectedButton(e.target)
     }
 
+    const handleButtonFocusForNextQuestion = () => {
+        if (selectedButton != undefined) {
+            selectedButton.blur()
+            setSelectedAnswer('')
+        }
+    }
+
+    const saveResultForQuestion = (selectedAnswer) => {
+        const checkAnswer = selectedAnswer === correctAnswer.text
+
+        let userAnswer
+        if (selectedAnswer === '') {
+            userAnswer = { question: question, correctAnswer: correctAnswer, selectedAnswer: undefined, result: undefined }
+        }
+        else {
+            userAnswer = { question: question, correctAnswer: correctAnswer, selectedAnswer: selectedAnswer, result: checkAnswer }
+        }
+        setUserAnswers([...userAnswers, userAnswer])
+
+        if (checkAnswer) {
+            setScore(score + scoreForEachCorrectAnswer)
+        }
+    }
+
     const approvedChoice = () => {
         if (timer <= durationForEachQuestion - waitingPeriod) {
-            const checkAnswer = selectedAnswer === correctAnswer.text
-
-            let userAnswer;
-            console.log(selectedAnswer);
-            if (selectedAnswer === '') {
-                userAnswer = { question: question, correctAnswer: correctAnswer, selectedAnswer: undefined, result: undefined }
-            }
-            else {
-                userAnswer = { question: question, correctAnswer: correctAnswer, selectedAnswer: selectedAnswer, result: checkAnswer }
-            }
-            setUserAnswers([...userAnswers, userAnswer])
-
-            if (checkAnswer) {
-                setScore(score + scoreForEachCorrectAnswer)
-            } else {
-            }
-
+            saveResultForQuestion(selectedAnswer)
             setCurrentQuestionNumber(currentQuestionNumber + 1)
+
             if (currentQuestionNumber + 1 === questionCountForQuiz) {
                 setShowResult(true)
             }
+
             setTimer(durationForEachQuestion)
+            handleButtonFocusForNextQuestion()
         } else {
             showToastMessageForWaitingPeriod()
         }
         setSelectedAnswer('')
-        selectedButton.blur()
     }
 
     const showToastMessageForWaitingPeriod = () => {
@@ -74,14 +90,14 @@ const QuestionCard = ({ quizData, score, setScore, currentQuestionNumber, setCur
             else if (timer === 0 && currentQuestionNumber < questionCountForQuiz) {
                 setCurrentQuestionNumber(currentQuestionNumber + 1)
                 setTimer(durationForEachQuestion)
-
-                const userAnswer = { question: question, correctAnswer: correctAnswer, selectedAnswer: undefined, result: undefined }
-                setUserAnswers([...userAnswers, userAnswer])
+                saveResultForQuestion(selectedAnswer)
 
                 if (currentQuestionNumber + 1 >= questionCountForQuiz) {
                     setShowResult(true)
                 }
-                selectedButton.blur()
+
+                handleButtonFocusForNextQuestion()
+                setSelectedAnswer('')
             }
         }, 1000)
 
