@@ -6,14 +6,17 @@ import 'react-toastify/dist/ReactToastify.css';
 const QuestionCard = ({ quizData, score, setScore, currentQuestionNumber, setCurrentQuestionNumber, userAnswers, setUserAnswers, showResult, setShowResult }) => {
     const answerChoices = ['A)', 'B)', 'C)', 'D)']
     const scoreForEachCorrectAnswer = 10
-    const durationForEachQuestion = 30
+    const durationForEachQuestion = 10
     const questionCountForQuiz = quizData.length
-    const waitingPeriod = 10
+    const waitingPeriod = 0
     const warningMessageForWaitingPeriod = `Soruları ilk ${waitingPeriod} saniye boyunca cevaplayamazsınız!`
 
     const [timer, setTimer] = useState(durationForEachQuestion)
+    const [selectedButton, setSelectedButton] = useState(undefined)
+    const [selectedAnswer, setSelectedAnswer] = useState('')
 
     const question = quizData[currentQuestionNumber]?.question
+
     let correctAnswer
     try {
         correctAnswer = (quizData[currentQuestionNumber]?.answers?.filter(answer => answer.correct))[0]
@@ -21,13 +24,23 @@ const QuestionCard = ({ quizData, score, setScore, currentQuestionNumber, setCur
 
     }
 
-    const approvedChoice = (e) => {
+    const handleSelect = (e) => {
+        setSelectedAnswer(e.currentTarget.value)
+        setSelectedButton(e.target)
+    }
 
+    const approvedChoice = () => {
         if (timer <= durationForEachQuestion - waitingPeriod) {
-            const selectedAnswer = e.currentTarget.value
             const checkAnswer = selectedAnswer === correctAnswer.text
 
-            const userAnswer = { question: question, correctAnswer: correctAnswer, selectedAnswer: selectedAnswer, result: checkAnswer }
+            let userAnswer;
+            console.log(selectedAnswer);
+            if (selectedAnswer === '') {
+                userAnswer = { question: question, correctAnswer: correctAnswer, selectedAnswer: undefined, result: undefined }
+            }
+            else {
+                userAnswer = { question: question, correctAnswer: correctAnswer, selectedAnswer: selectedAnswer, result: checkAnswer }
+            }
             setUserAnswers([...userAnswers, userAnswer])
 
             if (checkAnswer) {
@@ -43,6 +56,8 @@ const QuestionCard = ({ quizData, score, setScore, currentQuestionNumber, setCur
         } else {
             showToastMessageForWaitingPeriod()
         }
+        setSelectedAnswer('')
+        selectedButton.blur()
     }
 
     const showToastMessageForWaitingPeriod = () => {
@@ -66,6 +81,7 @@ const QuestionCard = ({ quizData, score, setScore, currentQuestionNumber, setCur
                 if (currentQuestionNumber + 1 >= questionCountForQuiz) {
                     setShowResult(true)
                 }
+                selectedButton.blur()
             }
         }, 1000)
 
@@ -93,7 +109,7 @@ const QuestionCard = ({ quizData, score, setScore, currentQuestionNumber, setCur
                                 <button
                                     className="answer"
                                     value={answer.text}
-                                    onClick={approvedChoice}
+                                    onClick={handleSelect}
                                     key={index}
                                 >
                                     <div className='answer-choice'>{answerChoices[index]}</div>
@@ -103,6 +119,9 @@ const QuestionCard = ({ quizData, score, setScore, currentQuestionNumber, setCur
                         })
                     }
                 </div>
+            </div>
+            <div className="next-btn-container">
+                <button onClick={approvedChoice} className='next-btn'>Sonraki</button>
             </div>
             <div className="progress">{currentQuestionNumber + 1} / {questionCountForQuiz}</div>
         </div>

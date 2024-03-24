@@ -72,6 +72,11 @@
     transition: .5s;
 }
 
+.answer:focus {
+    border: 1px solid orange;
+    background-color: #4e69a9;
+}
+
 /* .answer:hover {
     transform: scale(1.016);
     background-color: #1b2953;
@@ -82,10 +87,26 @@
     margin-right: 8px;
 }
 
+.next-btn-container {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.next-btn {
+    padding: 10px 20px;
+    background-color: #ffd300;
+    border: none;
+    outline: none;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 5px;
+}
+
 .progress {
     background-color: #42ff97;
     color: #141c3a;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 900;
     border-radius: 5px;
     padding: 5px 10px;
