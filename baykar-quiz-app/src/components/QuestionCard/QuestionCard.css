@@ -74,7 +74,6 @@
 
 .answer:focus {
     border: 1px solid orange;
-    background-color: #4e69a9;
 }
 
 /* .answer:hover {

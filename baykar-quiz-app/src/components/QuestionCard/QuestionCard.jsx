@@ -9,7 +9,7 @@ const QuestionCard = ({ quizData, score, setScore, currentQuestionNumber, setCur
     const durationForEachQuestion = 30
     const questionCountForQuiz = quizData.length
     const waitingPeriod = 10
-    const warningMessageForWaitingPeriod = `Soruları ilk ${waitingPeriod} saniye boyunca cevaplayamazsınız!`
+    const warningMessageForWaitingPeriod = `Soruları ilk ${waitingPeriod} saniye boyunca cevaplayamaz veya boş geçemezsiniz!`
 
     const [timer, setTimer] = useState(durationForEachQuestion)
     const [selectedButton, setSelectedButton] = useState(undefined)
@@ -31,8 +31,14 @@ const QuestionCard = ({ quizData, score, setScore, currentQuestionNumber, setCur
     })
 
     const handleSelect = (e) => {
-        setSelectedAnswer(e.currentTarget.value)
-        setSelectedButton(e.target)
+        if (timer <= durationForEachQuestion - waitingPeriod) {
+            setSelectedAnswer(e.currentTarget.value)
+            setSelectedButton(e.target)
+        }
+        else {
+            e.target.blur()
+            showToastMessageForWaitingPeriod()
+        }
     }
 
     const handleButtonFocusForNextQuestion = () => {
