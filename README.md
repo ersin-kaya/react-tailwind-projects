@@ -1,6 +1,4 @@
-# Baykar Frontend Cases
-
-## 1. Landing Page
+## 1. Landing Page Practice
 [Go to live preview](https://landingpage.ersinkaya.dev/)
 ###
 ![Screenshot 2024-03-23 at 09 05 39](https://github.com/ersin-kaya/baykar-cases/assets/79023498/870f5eeb-d40e-4b0e-8f50-68c1ffa8a5f1)
