@@ -1,4 +1,3 @@
-import './PromotionSectionCard.css'
 import sneaker from '../../assets/sneaker.png';
 
 const PromotionSectionCard = () => {
