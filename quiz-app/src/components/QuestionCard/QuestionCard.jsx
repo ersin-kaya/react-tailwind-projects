@@ -9,7 +9,8 @@ const QuestionCard = ({ quizData, score, setScore, currentQuestionNumber, setCur
     const durationForEachQuestion = 30
     const questionCountForQuiz = quizData.length
     const waitingPeriod = 5
-    const warningMessageForWaitingPeriod = `Soruları ilk ${waitingPeriod} saniye boyunca cevaplayamaz veya boş geçemezsiniz!`
+    const warningMessageForWaitingPeriod = `You cannot answer or skip questions during the first ${waitingPeriod} seconds!`
+
 
     const [timer, setTimer] = useState(durationForEachQuestion)
     const [selectedButton, setSelectedButton] = useState(undefined)
@@ -143,7 +144,7 @@ const QuestionCard = ({ quizData, score, setScore, currentQuestionNumber, setCur
                 </div>
             </div>
             <div className="next-btn-container">
-                <button onClick={approvedChoice} className='next-btn'>Sonraki</button>
+                <button onClick={approvedChoice} className='next-btn'>Next</button>
             </div>
             <div className="progress">{currentQuestionNumber + 1} / {questionCountForQuiz}</div>
         </div>
