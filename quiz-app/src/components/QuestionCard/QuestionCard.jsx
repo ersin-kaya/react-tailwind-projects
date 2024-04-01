@@ -8,7 +8,7 @@ const QuestionCard = ({ quizData, score, setScore, currentQuestionNumber, setCur
     const scoreForEachCorrectAnswer = 10
     const durationForEachQuestion = 30
     const questionCountForQuiz = quizData.length
-    const waitingPeriod = 10
+    const waitingPeriod = 5
     const warningMessageForWaitingPeriod = `Soruları ilk ${waitingPeriod} saniye boyunca cevaplayamaz veya boş geçemezsiniz!`
 
     const [timer, setTimer] = useState(durationForEachQuestion)
