@@ -3,10 +3,6 @@
     color: white;
 }
 
-.footer-navigation {}
-
-.footer-navigation-item {}
-
 .footer-navigation-item li:last-child {
     padding-right: 0;
 }
