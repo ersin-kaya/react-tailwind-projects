@@ -76,11 +76,6 @@
     border: 1px solid orange;
 }
 
-/* .answer:hover {
-    transform: scale(1.016);
-    background-color: #1b2953;
-} */
-
 .answer-choice {
     color: coral;
     margin-right: 8px;
