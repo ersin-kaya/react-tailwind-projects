@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import './Quiz.css'
 import * as api from '../../api/quizAPI'
 import QuestionCard from '../../components/QuestionCard/QuestionCard'
 import Result from '../../components/Result/Result'
