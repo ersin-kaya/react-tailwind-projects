@@ -12,16 +12,16 @@ const Result = ({ userAnswers, score }) => {
                 <thead className='table-header'>
                     <tr>
                         <th>
-                            Tebrikler! Sınavı tamamlamış bulunmaktasınız. Aşağıdan cevaplarınızı inceleyebilirsiniz.
+                            Congratulations! You have completed the exam. You can examine your answers below.
                         </th>
                     </tr>
                     <tr>&nbsp;</tr>
                     <tr className='score-row'>
                         <th>
-                            <h2 className='score-title'>Puanınız: <span className='score'>{score}</span></h2>
-                            <span className='correct-answer-row result-span'>Doğru sayısı: {correctAnswerCount}</span>
-                            <span className='empty-answer-row result-span'>Boş sayısı: {emptyAnswerCount}</span>
-                            <span className='wrong-answer-row result-span'>Yanlış sayısı: {wrongAnswerCount}</span>
+                            <h2 className='score-title'>Your score: <span className='score'>{score}</span></h2>
+                            <span className='correct-answer-row result-span'>Number of correct: {correctAnswerCount}</span>
+                            <span className='empty-answer-row result-span'>Number of empty: {emptyAnswerCount}</span>
+                            <span className='wrong-answer-row result-span'>Number of wrong: {wrongAnswerCount}</span>
                         </th>
                     </tr>
                     <tr>&nbsp;</tr>
@@ -34,16 +34,31 @@ const Result = ({ userAnswers, score }) => {
                             return (
                                 <React.Fragment key={index}>
                                     <tr className={(userAnswer.result) ? 'correct-answer-row' : (userAnswer.result == undefined) ? 'empty-answer-row' : 'wrong-answer-row'}>
-                                        <td><span className='question-result-span'>{index + 1}. Soru: </span>{userAnswer.question}</td>
+                                        <td>
+                                            <span className='question-result-span'>
+                                                Question {index + 1}:
+                                            </span>
+                                            {userAnswer.question}
+                                        </td>
                                     </tr>
                                     <tr className=''>
-                                        <td><span className='question-result-span'>Cevabınız:</span> {(userAnswer.selectedAnswer != undefined) ? userAnswer.selectedAnswer : '# Yanıtlanmadı #'}</td>
+                                        <td>
+                                            <span className='question-result-span'>
+                                                Your answer:
+                                            </span>
+                                            {(userAnswer.selectedAnswer != undefined) ? userAnswer.selectedAnswer : 'Not answered'}
+                                        </td>
                                     </tr>
                                     {
                                         (!userAnswer.result)
                                             ?
                                             <tr>
-                                                <td><span className='question-result-span'>Doğru cevap:</span> {userAnswer.correctAnswer.text}</td>
+                                                <td>
+                                                    <span className='question-result-span'>
+                                                        Correct answer:
+                                                    </span>
+                                                    {userAnswer.correctAnswer.text}
+                                                </td>
                                             </tr>
                                             : <></>
                                     }
@@ -58,7 +73,7 @@ const Result = ({ userAnswers, score }) => {
 
                 <tfoot>
                     <tr className='retake-quiz-row'>
-                        <button onClick={() => { window.location = "/" }} className='retake-quiz-btn'>Tekrar çöz</button>
+                        <button onClick={() => { window.location = "/" }} className='retake-quiz-btn'>Retake quiz</button>
                     </tr>
                 </tfoot>
             </table>
