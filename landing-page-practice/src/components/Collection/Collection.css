@@ -67,6 +67,4 @@
     .collection-images img:first-child {
         display: none;
     }
-
-    .collection-images img:last-child {}
 }
