@@ -1,7 +1,8 @@
 ## CSS Practice: Landing Page
 [Go to live preview](https://landingpage.ersinkaya.dev/)
 ###
-![Screenshot 2024-03-23 at 09 05 39](https://github.com/ersin-kaya/baykar-cases/assets/79023498/870f5eeb-d40e-4b0e-8f50-68c1ffa8a5f1)
+![Screenshot 2024-04-08 at 01 43 35](https://github.com/ersin-kaya/react-tailwind-projects/assets/79023498/7b6aeadb-4fe1-4f47-a7df-90cae22431e8)
+
 
 
 
