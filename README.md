@@ -14,7 +14,7 @@
 
 ## Installation
 
-After copying the project files to your local machine, follow the steps below to install and run the project:
+Follow the steps below to install and run the project:
 
 1. Clone or download the project.
 2. In the terminal, navigate to the project directory.
